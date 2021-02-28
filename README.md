@@ -1,6 +1,7 @@
 # concurrency-test
 Test concurrent updates in MySQL by incrementing single column in database on each request.
 
+## Configure
 To run application, edit the application.properties file and add datasource configuration and make sure to un-comment `spring.datasource.initialization-mode=always` property to load schema on first run.
 ```properties
 # Datasource URL of MySQL database
@@ -21,9 +22,11 @@ spring.datasource.password=
 #spring.datasource.initialization-mode=always
 ```
 
+## Run
 Then application can be started by
 `mvn spring-boot:run` from CLI, and by default it will run on port 8080.
 
+## API endpoints
 Following API endpoints are provided related to counter:
 
 1. `POST /api/counter/increment` - increments counter in database by 1. 
@@ -55,5 +58,5 @@ Following API endpoints are provided related to counter:
     }
     ```
 
-
+## Load testing
 For load testing use JMeter and add **concurrency.jmx** file, that will make 5000 concurrent request to `/api/counter/increment` endpoint and after finishing execution, value of counter in database should be 5000. 

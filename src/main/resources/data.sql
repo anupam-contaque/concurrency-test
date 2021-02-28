@@ -1,0 +1,1 @@
+INSERT INTO concurrency_test (counter) VALUES (0);

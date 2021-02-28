@@ -1,7 +1,7 @@
-#concurrency-test
+# concurrency-test
 Test concurrent updates in MySQL by incrementing single column in database on each request.
 
-To run application, edit the application.properties file and add datasource configuration and make sure to un-comment last property to load schema on first run.
+To run application, edit the application.properties file and add datasource configuration and make sure to un-comment `spring.datasource.initialization-mode=always` property to load schema on first run.
 ```properties
 # Datasource URL of MySQL database
 spring.datasource.url=jdbc:mysql://localhost:3306/concurrency
